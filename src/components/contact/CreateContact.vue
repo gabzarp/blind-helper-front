@@ -1,5 +1,5 @@
 <template>
-    <section class='bg-purple mt-5'>
+    <section class=' mt-5'>
       <div class="container py-4 bg-white">
         <div class="row justify-content-center">
           <div class="col-md-6 pb-4">            
@@ -17,7 +17,7 @@
                 <label class='col-form-label'>Phone</label>
                 <input class='form-control' required v-model="contact.phone" type="text" placeholder="Phone"/>
               </div>
-              <button class='btn bg-purple text-white border-0 rounded-0 w-50 py-2 mt-2' type="submit">Create contact</button>
+              <button class='btn bg-blue text-white border-0 rounded-0 w-50 py-2 mt-2' type="submit">Create contact</button>
               <p v-if="error" class='text-danger pt-2 mb-0'>
                 {{ error }}
               </p>
@@ -36,10 +36,7 @@
           name: '',
           email: '',
           phone: '',
-          user: {
-            _id :this.$session.get('_id'),
-            name:this.$session.get('email')
-          }
+          user: this.$session.get('id')
         }
       }
     },

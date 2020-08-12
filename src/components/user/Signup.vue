@@ -10,19 +10,26 @@
       <div class="container py-4 bg-white">
         <div class="row justify-content-center">
           <div class="col-md-6 pb-4">            
-            <form class="login d-flex flex-column" @submit.prevent="login">
-              <h1>Login</h1>
+            <form class="login d-flex flex-column" @submit.prevent="signup">
+              <h1>Signup</h1>
+              <div class="form-group">
+                <label class='col-form-label'>Name</label>
+                <input class='form-control' required v-model="user.name" type="text" placeholder="Name"/>
+              </div>
               <div class="form-group">
                 <label class='col-form-label'>E-mail</label>
                 <input class='form-control' required v-model="user.email" type="email" placeholder="E-mail"/>
+              </div>
+              <div class="form-group">
+                <label class='col-form-label'>CPF</label>
+                <input class='form-control' required v-model="user.cpf" type="text" placeholder="CPF"/>
               </div>
               <div class="form-group">
                 <label class='col-form-label'>Password</label>
                 <input class='form-control' required v-model="user.password" type="password" placeholder="Password"/>
               </div>
               <div class="d-flex justify-content-between align-items-center mt-2">
-                <button class='btn bg-blue text-white border-0 rounded-0 w-50 py-2 ' type="submit">Login</button>
-                <router-link to="/signup" class="text-blue">Not registered yet? Sign up.</router-link>
+                <button class='btn bg-blue text-white border-0 rounded-0 w-50 py-2 ' type="submit">Signup</button>
               </div>
 
               <p v-if="error" class='text-danger pt-2 mb-0'>
@@ -41,18 +48,20 @@
         error: '',
         user:{
           email: '',
-          password: ''
+          password: '',
+          cpf: '',
+          name: ''
         }
       }
     },
     methods: {
-      login: function () {
-        this.axios.post('http://localhost:3001/login',this.user)
+      signup: function () {
+        this.axios.post('http://localhost:3001/user',this.user)
         .then(response=>{
           if(response.data){
             this.$session.start()
             this.$session.set('email', this.user.email)
-            this.$session.set('id', response.data._id)
+            this.$session.set('id', this.user._id)
             this.$router.push("/contacts")
           }
           else{

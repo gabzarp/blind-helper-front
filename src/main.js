@@ -10,6 +10,7 @@ Vue.use(VueRouter)
 Vue.prototype.axios = axios
 
 import Login from './components/user/Login.vue'
+import Signup from './components/user/Signup.vue'
 import Contacts from './components/contact/Contacts.vue'
 import CreateContact from './components/contact/CreateContact.vue'
 
@@ -17,6 +18,7 @@ Vue.config.productionTip = false
 
 const routes = [
   { path: '/', component: Login },
+  { path: '/signup', component: Signup },
   { path: '/contacts', component: Contacts },
   { path: '/create_contact', component: CreateContact }
 ]
