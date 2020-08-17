@@ -10,10 +10,10 @@
                 <router-link to="/" class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Login</router-link>
               </li>
               <li v-if='user.email' class="nav-item">
-                <router-link to="/contacts" class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Contacts</router-link>
+                <router-link to="/contatos" class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Contatos</router-link>
               </li>
               <li v-if='user.email' class="nav-item">
-                <a v-on:click="logout" href='' class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Logout</a>
+                <a v-on:click="logout" href='' class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Sair</a>
               </li>
             </ul>
           </div>

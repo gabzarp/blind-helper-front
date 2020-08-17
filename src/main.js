@@ -3,7 +3,9 @@ import App from './App.vue'
 import axios from 'axios'
 import VueRouter from 'vue-router'
 import VueSession from 'vue-session'
+import VueTheMask from 'vue-the-mask'
 
+Vue.use(VueTheMask)
 Vue.use(VueSession)
 Vue.use(VueRouter)
 
@@ -18,9 +20,9 @@ Vue.config.productionTip = false
 
 const routes = [
   { path: '/', component: Login },
-  { path: '/signup', component: Signup },
-  { path: '/contacts', component: Contacts },
-  { path: '/create_contact', component: CreateContact }
+  { path: '/registrar', component: Signup },
+  { path: '/contatos', component: Contacts },
+  { path: '/criar-contato', component: CreateContact }
 ]
 
 const router = new VueRouter({routes})
