@@ -9,8 +9,11 @@
               <li v-if='!user.email' class="nav-item">
                 <router-link to="/" class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Login</router-link>
               </li>
-              <li v-if='user.email' class="nav-item">
+              <li v-if='user.email' class="nav-item pr-5">
                 <router-link to="/contatos" class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Contatos</router-link>
+              </li>
+              <li v-if='user.email' class="nav-item pr-5">
+                <router-link to="/associar" class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Associar bengala</router-link>
               </li>
               <li v-if='user.email' class="nav-item">
                 <a v-on:click="logout" href='' class="nav-link navbar-nav-principal-link text-dark text-uppercase h3">Sair</a>

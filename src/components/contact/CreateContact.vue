@@ -15,7 +15,7 @@
               </div>
               <div class="form-group">
                 <label class='col-form-label'>Telefone</label>
-                <input class='form-control' v-mask="'(##) ####-####'" required v-model="contact.phone" type="text" placeholder="Telefone"/>
+                <input class='form-control' v-mask="'(##) #####-####'" required v-model="contact.phone" type="text" placeholder="Telefone"/>
               </div>
               <button class='btn bg-blue text-white border-0 rounded-0 w-50 py-2 mt-2' type="submit">Criar contato</button>
               <p v-if="error" class='text-danger pt-2 mb-0'>
@@ -45,7 +45,7 @@
         this.axios
         .post('https://blind-helper.herokuapp.com/contact',this.contact)
         .then(()=>{
-          this.$router.push("/contacts")
+          this.$router.push("/contatos")
         })
         .catch(err=>{
           this.error = err

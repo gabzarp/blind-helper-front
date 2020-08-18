@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
           <div class="col-md-6 pb-4">            
             <form class="login d-flex flex-column" @submit.prevent="signup">
-              <h1>Regristro</h1>
+              <h1>Registro</h1>
               <div class="form-group">
                 <label class='col-form-label'>Nome</label>
                 <input class='form-control' required v-model="user.name" type="text" placeholder="Nome"/>
@@ -60,8 +60,9 @@
         .then(response=>{
           if(response.data){
             this.$session.start()
-            this.$session.set('email', this.user.email)
-            this.$session.set('id', this.user._id)
+            this.$session.set('email', response.data.email)
+            this.$session.set('serial', response.data.serial)
+            this.$session.set('id', response.data._id)
             this.$router.push("/contatos")
           }
           else{

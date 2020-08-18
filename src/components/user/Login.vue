@@ -41,7 +41,7 @@
         error: '',
         user:{
           email: '',
-          password: ''
+          password: '',
         }
       }
     },
@@ -52,6 +52,7 @@
           if(response.data){
             this.$session.start()
             this.$session.set('email', this.user.email)
+            this.$session.set('serial', response.data.serial)
             this.$session.set('id', response.data._id)
             this.$router.push("/contatos")
           }

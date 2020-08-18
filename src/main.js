@@ -13,6 +13,7 @@ Vue.prototype.axios = axios
 
 import Login from './components/user/Login.vue'
 import Signup from './components/user/Signup.vue'
+import AssociateHelper from './components/user/AssociateHelper.vue'
 import Contacts from './components/contact/Contacts.vue'
 import CreateContact from './components/contact/CreateContact.vue'
 
@@ -22,7 +23,8 @@ const routes = [
   { path: '/', component: Login },
   { path: '/registrar', component: Signup },
   { path: '/contatos', component: Contacts },
-  { path: '/criar-contato', component: CreateContact }
+  { path: '/criar-contato', component: CreateContact },
+  { path: '/associar', component: AssociateHelper }
 ]
 
 const router = new VueRouter({routes})

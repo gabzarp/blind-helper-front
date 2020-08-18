@@ -13,13 +13,13 @@
                     <th>Telefone</th>
                     <th></th>
                 </tr>
-                <tr v-for="contact in contacts" class="col-md-12 pb-5 border-bottom" :key="contact._id">
+                <tr v-for="(contact, index) in contacts" class="col-md-12 pb-5 border-bottom" :key="contact._id">
                     <th>{{contact.name}}</th>
                     <th>{{contact.email}}</th>
                     <th>{{contact.phone}}</th>
                     <th class="d-flex justify-content-center">
                         <!-- <router-link :to="'/user/'+contact._id"  class='button border-0 bg-info px-3 py-2 text-white mr-2'>Edit</router-link> -->
-                        <a v-on:click="deleteContact(contact._id)" href="#" class='button border-0 px-3 py-2 bg-danger text-white'>Deletar</a>
+                        <a v-on:click="deleteContact(contact._id, index)" href="#" class='button border-0 px-3 py-2 bg-danger text-white'>Deletar</a>
                     </th>
                 </tr>
             </table>
@@ -46,9 +46,12 @@ export default {
     .catch(err=>console.log(err))
   },
    methods: {
-    deleteContact: function (_id){
+    deleteContact: function (_id, index){
       this.axios
       .delete('https://blind-helper.herokuapp.com/contact/' + _id)
+      .then(() => {
+         this.contacts.splice(index, 1)
+      })
       .catch(err=>console.log(err))
     }
   }
