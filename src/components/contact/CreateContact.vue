@@ -36,7 +36,7 @@
           name: '',
           email: '',
           phone: '',
-          user: this.$session.get('id')
+          user: this.$session.get('_id')
         }
       }
     },

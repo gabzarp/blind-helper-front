@@ -41,7 +41,7 @@ export default {
   },
   mounted () {
     this.axios
-    .get('https://blind-helper.herokuapp.com/contact-by-user/' + this.$session.get('id'))
+    .get('https://blind-helper.herokuapp.com/contact-by-user/' + this.$session.get('_id'))
     .then(response => {this.contacts = response.data})
     .catch(err=>console.log(err))
   },

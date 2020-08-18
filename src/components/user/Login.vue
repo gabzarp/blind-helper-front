@@ -52,8 +52,8 @@
           if(response.data){
             this.$session.start()
             this.$session.set('email', this.user.email)
-            this.$session.set('serial', response.data.serial)
-            this.$session.set('id', response.data._id)
+            this.$session.set('serial', response.data.user.serial)
+            this.$session.set('_id', response.data.user._id)
             this.$router.push("/contatos")
           }
           else{

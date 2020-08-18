@@ -30,7 +30,7 @@
     methods: {
       associate: function () {
         this.axios
-        .post('https://blind-helper.herokuapp.com/helper/' + this.$session.get('id'), {"serial":this.serial})
+        .post('https://blind-helper.herokuapp.com/helper/' + this.$session.get('_id'), {"serial":this.serial})
         .then(()=>{
           this.$session.set('serial', this.serial)
           this.$router.push("/contatos")

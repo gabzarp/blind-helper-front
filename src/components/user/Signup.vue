@@ -59,10 +59,11 @@
         this.axios.post('https://blind-helper.herokuapp.com/user',this.user)
         .then(response=>{
           if(response.data){
+            console.log(response.data)
             this.$session.start()
-            this.$session.set('email', response.data.email)
-            this.$session.set('serial', response.data.serial)
-            this.$session.set('id', response.data._id)
+            this.$session.set('email', response.data.ops[0].email)
+            this.$session.set('serial', response.data.ops[0].serial)
+            this.$session.set('_id', response.data.ops[0]._id)
             this.$router.push("/contatos")
           }
           else{
