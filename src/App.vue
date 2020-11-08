@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" style="    background-image: url(/images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <header class='fixed-top shadow bg-white border-bottom'> 
       <div class="accordion" id="accordionMenuOpts">
@@ -26,6 +29,7 @@
     <router-view></router-view>
   </div>
 </template>
+
 <script>
 
 export default {
@@ -34,7 +38,7 @@ export default {
     return {
       user: {
         email: this.$session.get('email'),
-      }
+      },
     }
   }, 
   updated () {

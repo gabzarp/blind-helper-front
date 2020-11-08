@@ -7,7 +7,7 @@
           </div>
         </div>
       </div>
-      <div class="container py-4 bg-white">
+      <div class="container py-4">
         <div class="row justify-content-center">
           <div class="col-md-6 pb-4">            
             <form class="login d-flex flex-column" @submit.prevent="signup">

@@ -1,7 +1,7 @@
 <template>
   <div class="hello mt-5">
     <section class=''>
-      <div class="container pt-4 bg-white">
+      <div class="container pt-4">
         <div class="row justify-content-center">
           <div v-if='user.email' class="col-10 px-0 pb-2">
             <router-link to='/criar-contato' class='btn border-0 rounded-0 px-3 py-2 bg-blue text-white'>Criar contato</router-link>
